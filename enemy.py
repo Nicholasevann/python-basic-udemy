@@ -9,3 +9,5 @@ class Enemy:
         return(f'The {self.type_of_enemy} enemy is walking forward.')
     def attack(self):
         return(f'The {self.type_of_enemy} enemy attacks with {self.attack_damage} damage.')
+    def special_attack(self):
+        return(f'The {self.type_of_enemy} enemy performs a special attack!')

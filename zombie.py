@@ -1,5 +1,5 @@
 from enemy import *
-
+import random
 class Zombie(Enemy):
     def __init__(self, health, damage):
         super().__init__("Zombie", health, damage)
@@ -15,3 +15,10 @@ class Zombie(Enemy):
             print(f"{self.type_of_enemy} spreads infection to {target.type_of_enemy}!")
         else:
             print("Target is not a Zombie!")
+    def special_attack(self):
+        did_special_attack = random.random() < 0.5
+        if did_special_attack:
+            self.health_points += 5
+            return f"{self.type_of_enemy} performs a special attack, smashing the ground and sending shockwaves!"
+        else:
+            return f"{self.type_of_enemy} tries to perform a special attack but fails!"
